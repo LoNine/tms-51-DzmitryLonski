@@ -20,7 +20,6 @@ class Cat {
         })
 
         promise.then(result => {
-        spinner.remove()
 
         let imageElement = document.createElement('img');
         imageElement.src = result[0].url
@@ -28,6 +27,8 @@ class Cat {
 
         mainElement.append(imageElement);
         mainElement.addEventListener('click', this.draw);
+
+        spinner.remove()
         })
     }
 }
