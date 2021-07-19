@@ -1,11 +1,10 @@
 class Spinner {
+  element = document.getElementById('loader');
     draw() {
-        let spinnerElement = document.getElementById('loader');
-        spinnerElement.classList.add('loader');
+        this.element.classList.add('loader');
     }
     remove() {
-        let spinnerElement = document.getElementById('loader');
-        spinnerElement.classList.remove('loader');
+        this.element.classList.remove('loader');
     }
 }
 
