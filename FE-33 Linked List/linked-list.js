@@ -22,9 +22,27 @@ class LinkedList {
             while (current.next) {
                 current = current.next
             }
-            
+
             current.next = node;
         }
         this.length++
+    }
+
+    pop() {
+        if (this.length <= 0) {
+            return 'Linked list is empty!'
+        }
+
+        let current = this.head;
+        let prev = null;
+
+        while (current.next) {
+            prev = current;
+            current = current.next;
+        }
+
+        prev.next = null
+        this.length--
+        return current.value
     }
 }
