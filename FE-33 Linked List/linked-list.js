@@ -159,5 +159,20 @@ class LinkedList {
     removeByValue(value) {
         return this.remove(this.getIndexOf(value))
     }
+
+    getValueByPosition(position) {
+        if (position < 0 || position > this.length) {
+            return 'Incorrect position value'
+        }
+
+        let current = this.head;
+        let index = 0;
+
+        while(index < position) {
+            current = current.next;
+            index++
+        }
+        return current.value
+    }
     
 }
