@@ -45,4 +45,32 @@ class LinkedList {
         this.length--
         return current.value
     }
+
+    add(position, value) {
+        if (position < 0 || position > this.length) {
+            return 'Incorrect position value';
+        }
+
+        let node = new Node(value);
+
+        if (position === 0) {
+            node.next = this.head;
+            this.head = node;
+        } else {
+            let current = this.head;
+            let prev = null;
+            let index = 0;
+
+            while(index < position) {
+                prev = current;
+                current = current.next;
+                index++;
+            }
+
+            prev.next = node;
+            node.next = current;
+        }
+        this.length++
+    }
+
 }
