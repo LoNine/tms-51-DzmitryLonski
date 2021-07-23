@@ -85,5 +85,13 @@ class LinkedList {
         return array
     }
 
+    print() {
+        let current = this.head
+
+        while(current) {
+            console.log(current.value);
+            current = current.next;
+        }
+    }   
     
 }
