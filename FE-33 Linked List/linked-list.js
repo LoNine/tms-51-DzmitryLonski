@@ -73,4 +73,17 @@ class LinkedList {
         this.length++
     }
 
+    toArray() {
+        let array = [];
+        let current = this.head;
+
+        while(current) {
+            array.push(current.value);
+            current = current.next;
+        }
+
+        return array
+    }
+
+    
 }
