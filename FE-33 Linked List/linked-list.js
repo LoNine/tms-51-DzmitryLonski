@@ -156,4 +156,8 @@ class LinkedList {
         return -1
     }
     
+    removeByValue(value) {
+        return this.remove(this.getIndexOf(value))
+    }
+    
 }
