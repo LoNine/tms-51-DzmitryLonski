@@ -118,4 +118,8 @@ class LinkedList {
         this.length--;
         return current.value
     }
+
+    isEmpty() {
+        return this.length === 0
+    }
 }
