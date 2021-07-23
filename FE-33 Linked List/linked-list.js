@@ -140,4 +140,20 @@ class LinkedList {
         
         this.length++
     }
+
+    getIndexOf(value) {
+        let current = this.head;
+        let index = 0;
+
+        while(current) {
+            if (current.value === value) {
+                return index
+            }
+
+            current = current.next;
+            index++
+        }
+        return -1
+    }
+    
 }
