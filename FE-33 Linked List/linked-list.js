@@ -80,16 +80,7 @@ class LinkedList {
         while(current) {
             array.push(current.value);
             current = current.next;
-        }let list = new LinkedList();
-
-        list.push(1)
-        list.push(2)
-        list.push(3)
-        list.push(4)
-        list.push(5)
-        
-        list.remove(2)
-        list.print()
+        }
 
         return array
     }
@@ -145,7 +136,7 @@ class LinkedList {
         if (this.length <= 0) {
             return 'Linked list is empty'
         }
-        
+
         let current = this.head;
 
         this.head = current.next;
