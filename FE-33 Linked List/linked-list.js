@@ -93,5 +93,29 @@ class LinkedList {
             current = current.next;
         }
     }   
-    
+
+    remove(position) {
+        if (position < 0 || position > this.length) {
+            return 'Incorrect position value'
+        }
+
+        let current = this.head;
+
+        if (position ===0) {
+            this.head = current.next
+        } else {
+            let prev = null;
+            let index = 0;
+
+            while(index < position) {
+                prev = current;
+                current = current.next;
+                index++;
+            }
+
+            prev.next = current.next;
+        }
+        this.length--;
+        return current.value
+    }
 }
