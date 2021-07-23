@@ -141,6 +141,20 @@ class LinkedList {
         this.length++
     }
 
+    shift() {
+        if (this.length <= 0) {
+            return 'Linked list is empty'
+        }
+        
+        let current = this.head;
+
+        this.head = current.next;
+
+        this.length--;
+
+        return current.value
+    }
+
     getIndexOf(value) {
         let current = this.head;
         let index = 0;
@@ -174,5 +188,5 @@ class LinkedList {
         }
         return current.value
     }
-    
+
 }
