@@ -4,7 +4,7 @@ class Node {
     this.next = null;
   }
 }
-
+// eslint-disable-next-line no-unused-vars
 class LinkedList {
   constructor() {
     this.head = null;
@@ -12,7 +12,7 @@ class LinkedList {
   }
 
   push(value) {
-    let node = new Node(value);
+    const node = new Node(value);
 
     if (this.length === 0) {
       this.head = node;
@@ -30,7 +30,7 @@ class LinkedList {
 
   pop() {
     if (this.length <= 0) {
-      return "Linked list is empty!";
+      return 'Linked list is empty!';
     }
 
     let current = this.head;
@@ -48,10 +48,10 @@ class LinkedList {
 
   add(position, value) {
     if (position < 0 || position > this.length) {
-      return "Incorrect position value";
+      return 'Incorrect position value';
     }
 
-    let node = new Node(value);
+    const node = new Node(value);
 
     if (position === 0) {
       node.next = this.head;
@@ -74,7 +74,7 @@ class LinkedList {
   }
 
   toArray() {
-    let array = [];
+    const array = [];
     let current = this.head;
 
     while (current) {
@@ -96,7 +96,7 @@ class LinkedList {
 
   remove(position) {
     if (position < 0 || position > this.length) {
-      return "Incorrect position value";
+      return 'Incorrect position value';
     }
 
     let current = this.head;
@@ -124,7 +124,7 @@ class LinkedList {
   }
 
   unshift(value) {
-    let node = new Node(value);
+    const node = new Node(value);
 
     node.next = this.head;
     this.head = node;
@@ -134,10 +134,10 @@ class LinkedList {
 
   shift() {
     if (this.length <= 0) {
-      return "Linked list is empty";
+      return 'Linked list is empty';
     }
 
-    let current = this.head;
+    const current = this.head;
 
     this.head = current.next;
 
@@ -167,7 +167,7 @@ class LinkedList {
 
   getValueByPosition(position) {
     if (position < 0 || position > this.length) {
-      return "Incorrect position value";
+      return 'Incorrect position value';
     }
 
     let current = this.head;
