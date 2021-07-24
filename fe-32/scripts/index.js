@@ -1,4 +1,4 @@
-const Cat = require('./interface.js')
+const Cat = require('./interface');
 
-let cat = new Cat()
-cat.draw()
+const cat = new Cat();
+cat.draw();
