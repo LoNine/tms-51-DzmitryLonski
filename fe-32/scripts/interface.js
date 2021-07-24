@@ -1,29 +1,28 @@
-const Request = require("./requests.js");
-const Spinner = require("./spinner");
+const getCatInfo = require('./requests');
+const Spinner = require('./spinner');
 
 class Cat {
   draw() {
-    let mainElement = document.getElementById("main");
-    mainElement.innerHTML = "";
+    const mainElement = document.getElementById('main');
+    mainElement.innerHTML = '';
 
-    let spinner = new Spinner();
+    const spinner = new Spinner();
     spinner.draw();
 
-    let request = new Request();
-    request.getCat().then((result) => {
-      let imageElement = document.createElement("img");
+    getCatInfo().then((result) => {
+      const imageElement = document.createElement('img');
       imageElement.src = result.data[0].url;
-      imageElement.classList.add("image");
+      imageElement.classList.add('image');
 
       mainElement.append(imageElement);
-      mainElement.addEventListener("click", this.draw);
+      mainElement.addEventListener('click', this.draw);
 
       spinner.remove();
     })
-    .catch(error => {
-        mainElement.append(error)
-        spinner.remove()
-    })
+      .catch((error) => {
+        mainElement.append(error);
+        spinner.remove();
+      });
   }
 }
 
