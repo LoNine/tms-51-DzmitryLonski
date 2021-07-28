@@ -85,7 +85,7 @@ describe('LinkedList', () => {
       expect(result).toThrow(BadValueOfPositionError);
     });
 
-    it('adds node to requided position', () => {
+    it('adds node to required position', () => {
       const linkedList = new LinkedList();
       linkedList.push(1);
       linkedList.push(2);
@@ -140,6 +140,22 @@ describe('LinkedList', () => {
       };
 
       expect(linkedList.head.next.next).toMatchObject(requiredResult);
+    });
+  });
+
+  describe('toArray', () => {
+    it('returns array of linked list values', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      linkedList.push(4);
+      linkedList.push(5);
+
+      const result = linkedList.toArray();
+      const requiredResult = [1, 2, 3, 4, 5];
+
+      expect(result).toEqual(requiredResult);
     });
   });
 });
