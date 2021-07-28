@@ -4,12 +4,14 @@
   "description": "",
   "main": "linked-list.js",
   "scripts": {
-    "lint": "eslint --ext .js ./"
+    "lint": "eslint --ext .js ./",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.31.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.0.6"
   }
 }

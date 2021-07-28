@@ -1,3 +1,6 @@
+const LinkedListEmptyError = require('./LinkedListEmptyError');
+const BadValueOfPositionError = require('./BadValueOfPositionError');
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -30,7 +33,7 @@ class LinkedList {
 
   pop() {
     if (this.length <= 0) {
-      return 'Linked list is empty!';
+      throw new LinkedListEmptyError('LinkedList is empty!');
     }
 
     let current = this.head;
@@ -48,7 +51,7 @@ class LinkedList {
 
   add(position, value) {
     if (position < 0 || position > this.length) {
-      return 'Incorrect position value';
+      throw new BadValueOfPositionError('Bad value of position!');
     }
 
     const node = new Node(value);
@@ -96,7 +99,7 @@ class LinkedList {
 
   remove(position) {
     if (position < 0 || position > this.length) {
-      return 'Incorrect position value';
+      throw new BadValueOfPositionError('Bad value of position!');
     }
 
     let current = this.head;
@@ -134,7 +137,7 @@ class LinkedList {
 
   shift() {
     if (this.length <= 0) {
-      return 'Linked list is empty';
+      throw new LinkedListEmptyError('LinkedList is empty!');
     }
 
     const current = this.head;
@@ -167,7 +170,7 @@ class LinkedList {
 
   getValueByPosition(position) {
     if (position < 0 || position > this.length) {
-      return 'Incorrect position value';
+      throw new BadValueOfPositionError('Bad value of position!');
     }
 
     let current = this.head;
@@ -180,3 +183,5 @@ class LinkedList {
     return current.value;
   }
 }
+
+module.exports = LinkedList;
