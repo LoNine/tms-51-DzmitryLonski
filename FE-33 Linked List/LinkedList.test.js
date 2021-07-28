@@ -143,4 +143,45 @@ describe('LinkedList', () => {
       expect(result).toBeFalsy();
     });
   });
+  
+  describe('unshift', () => {
+    it('adds new node to the start of linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.unshift(1);
+      
+      expect(linkedList.head.value).toBe(1)
+    });
+    
+    it('links new node to the previous first node', () => {
+      const linkedList = new LinkedList();
+      
+      linkedList.push(1);
+      linkedList.unshift('value');
+      
+      expect(linkedList.head.next).not.toBeNull();
+    });
+  });
+  
+  describe('shift', () => {
+    it('returns value of first node in linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      
+      const result = linkedList.shift();
+      
+      expect(result).toBe(1);
+    });
+    
+    it('rewrite first node to second one', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      
+      linkedList.shift();
+      expect(linkedList.head.value).toBe(2);
+    });
+  });
 });
