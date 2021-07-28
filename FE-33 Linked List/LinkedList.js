@@ -185,11 +185,3 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
-
-const linkedList = new LinkedList();
-linkedList.push(1);
-linkedList.push(2);
-linkedList.push(3);
-linkedList.add(2, 'value');
-
-console.log(JSON.stringify(linkedList));

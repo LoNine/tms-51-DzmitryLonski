@@ -158,4 +158,22 @@ describe('LinkedList', () => {
       expect(result).toEqual(requiredResult);
     });
   });
+
+  describe('isEmpty', () => {
+    it('returns true when linked list is empty', () => {
+      const linkedList = new LinkedList();
+      const result = linkedList.isEmpty();
+
+      expect(result).toBeTruthy();
+    });
+
+    it('returns false when linked list is not empty', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+
+      const result = linkedList.isEmpty();
+
+      expect(result).toBeFalsy();
+    });
+  });
 });
