@@ -88,15 +88,6 @@ class LinkedList {
     return array;
   }
 
-  print() {
-    let current = this.head;
-
-    while (current) {
-      console.log(current.value);
-      current = current.next;
-    }
-  }
-
   remove(position) {
     if (position < 0 || position > this.length) {
       throw new BadValueOfPositionError('Bad value of position!');
