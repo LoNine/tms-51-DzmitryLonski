@@ -262,4 +262,37 @@ describe('LinkedList', () => {
       expect(result).toBe(2)
     });
   });
+  
+  describe('getValueByPosition', () => {
+    it('throws an error when position less than 0', () => {
+      const linkedList = new LinkedList();
+      
+      const result = () => {
+        linkedList.getValueByPosition(-1);
+      };
+      
+      expect(result).toThrow(BadValueOfPositionError);
+    });
+    
+    it('throws an error when position more than linked list length', () => {
+      const linkedList = new LinkedList();
+      
+      const result = () => {
+        linkedList.getValueByPosition(5);
+      };
+      
+      expect(result).toThrow(BadValueOfPositionError);
+    });
+    
+    it('returns value of node by position', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      
+      const result = linkedList.getValueByPosition(1);
+      
+      expect(result).toBe(2);
+    });
+  });
 });
