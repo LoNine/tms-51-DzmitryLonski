@@ -184,4 +184,68 @@ describe('LinkedList', () => {
       expect(linkedList.head.value).toBe(2);
     });
   });
+  
+  describe('remove', () => {
+    it('throws an error when position less than 0', () => {
+      const linkedList = new LinkedList();
+      const result = () => {
+        linkedList.remove(-1);
+      };
+     expect(result).toThrow(BadValueOfPositionError);
+    });
+    
+    it('throws an error when position more than linked list length', () => {
+      const linkedList = new LinkedList();
+      const result = () => {
+        linkedList.remove(2);
+      };
+      
+      expect(result).toThrow(BadValueOfPositionError);
+    });
+    
+    it('returns value of deleted node', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      linkedList.push(4);
+      
+      const result = linkedList.remove(2);
+      
+      expect(result).toBe(3);
+    });
+    
+    it('links nodes before and after the deleted node', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      linkedList.push(3);
+      
+      linkedList.remove(1);
+      const result = linkedList.head.next.value;
+      expect(result).toBe(3);
+    });
+    
+    it('delete last node if position equals linked list length', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      
+      linkedList.remove(1);
+      const result = linkedList.head.next;
+      
+      expect(result).toBeNull();
+    });
+    
+    it('changes first node if position equals 0', () => {
+      const linkedList = new LinkedList();
+      linkedList.push(1);
+      linkedList.push(2);
+      
+      linkedList.remove(0);
+      const result = linkedList.head.value;
+      
+      expect(result).toBe(2);
+    });
+  });
 });
