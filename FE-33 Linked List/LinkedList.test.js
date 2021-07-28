@@ -248,4 +248,18 @@ describe('LinkedList', () => {
       expect(result).toBe(2);
     });
   });
+  
+  describe('getIndexOf', () => {
+    it('returns the index of the first found node', () => {
+        const linkedList = new LinkedList();
+      linkedList.push('value 1');
+      linkedList.push('value 2');
+      linkedList.push('value 3');
+      linkedList.push('value 4');
+      
+      const result = linkedList.getIndexOf('value 3');
+      
+      expect(result).toBe(2)
+    });
+  });
 });
