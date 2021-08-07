@@ -6,7 +6,7 @@ const htmlWebPlugin = new HtmlWebPlugin({
 });
 
 module.exports = {
-  entry: './index.js',
+  entry: './src/index.js',
   plugins: [
     htmlWebPlugin,
   ],
@@ -15,6 +15,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.png$/,
+        type: 'asset',
       },
     ],
   },
